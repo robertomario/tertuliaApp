@@ -1,6 +1,6 @@
 <div class="login">
 <h1 class="title">Login</h1>
-<form [formGroup]="loginForm">
+<form [formGroup]="loginForm" (ngSubmit)="goToLogin()">
   <div class="container">
     <label for="login_email">Email</label>
     <input
@@ -20,8 +20,7 @@
     />
   </div>
   <button class="btn-primary login-btn" [disabled]="loginForm.invalid">Sign in</button>
+  {{ erro }}
 </form>
-
-{{loginForm.value | json}}
 
 </div>

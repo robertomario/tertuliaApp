@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  fire: {
+    apiKey: "AIzaSyAELh9O1uEkDO9LN6iH0e6xaaudWDAT_AU",
+    authDomain: "tertuliaapp.firebaseapp.com",
+    databaseURL: "https://tertuliaapp.firebaseio.com",
+    projectId: "tertuliaapp",
+    storageBucket: "tertuliaapp.appspot.com",
+    messagingSenderId: "297528404774",
+    appId: "1:297528404774:web:d5cb9ac607bb66a876afe7",
+    measurementId: "G-MVM3CCMMB6"
+  }
 };
 
 /*
