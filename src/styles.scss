@@ -19,5 +19,8 @@ body, html {
   }
   &:hover {
     background: red;
+    &:disabled {
+      background: gainsboro;
+    }
   }
 }

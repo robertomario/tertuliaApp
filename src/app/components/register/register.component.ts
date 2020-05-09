@@ -15,6 +15,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private afAuth: AngularFireAuth, private router: Router) {
     this.registerForm = formBuilder.group({
+      name: ['', [Validators.required, Validators.minLength(5)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });

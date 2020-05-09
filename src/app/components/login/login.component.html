@@ -20,7 +20,8 @@
     />
   </div>
   <button class="btn-primary login-btn" [disabled]="loginForm.invalid">Sign in</button>
+
   {{ erro }}
 </form>
-
+<button class="btn-primary login-btn" (click)="goToRegister()">Register</button>
 </div>
