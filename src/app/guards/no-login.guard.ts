@@ -15,11 +15,14 @@ export class NoLoginGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      return this.afAuth.user.pipe(map((user) => !!user), tap(isLogin => {
-        if(isLogin) {
+      return this.afAuth.user.pipe(
+        map((user) => !user),
+        tap((isNoLogin) => {
+        if(!isNoLogin) {
           this.router.navigate(['home'])
         }
-      }));
+      })
+    );
   }
 
 }

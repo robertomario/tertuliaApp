@@ -6,5 +6,6 @@
     <label for="password">Password</label>
     <input type="text" formControlName="password" id="password"/>
     <button class="register-btn btn-primary" [disabled]="registerForm.invalid">Register</button>
+    <span *ngIf="!!error"> {{ error }}</span>
   </form>
 </div>

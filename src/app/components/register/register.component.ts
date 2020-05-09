@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
-  erro = '';
+  error = '';
 
   constructor(private formBuilder: FormBuilder, private afAuth: AngularFireAuth, private router: Router) {
     this.registerForm = formBuilder.group({
@@ -24,11 +24,11 @@ export class RegisterComponent implements OnInit {
   }
 
   registerUser() {
-    this.erro = '';
+    this.error = '';
     const {email, password} = this.registerForm.value;
     this.afAuth
       .createUserWithEmailAndPassword(email, password)
-      .then((user) => this.router.navigate(['home']))
-      .catch(({message}) => (this.erro=message));
+      .then(() => this.router.navigate(['home']))
+      .catch(({message}) => (this.error=message));
   }
 }
