@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+$btn-primary-color: #619f12;
+
+body, html {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.btn-primary{
+  background: $btn-primary-color;
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+}

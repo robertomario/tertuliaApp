@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "tertuliaApp"
+    }
+  },
+  "defaultProject": "tertuliaApp",
+  "cli": {
+    "analytics": "d7f3ed3d-62d2-45e7-9b93-fda7c92b6ee1"
+  }
 }
