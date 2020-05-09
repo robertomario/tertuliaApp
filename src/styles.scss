@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-$btn-primary-color: #619f12;
+$btn-primary-color: blue;
 
 body, html {
   margin: 0;
@@ -14,4 +14,10 @@ body, html {
   border-radius: 5px;
   color: white;
   font-size: 15px;
+  &:disabled {
+    background: gainsboro;
+  }
+  &:hover {
+    background: red;
+  }
 }
