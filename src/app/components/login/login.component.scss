@@ -7,8 +7,10 @@
 }
 
 .title {
+  margin: 40px;
+  font-size: 30px;
+  color: #3f50b5;
   text-align: center;
-  margin-top: 0;
 }
 
 .container {
@@ -29,4 +31,17 @@
   margin: auto;
   width: 80px;
   margin-bottom: 5px;
+}
+
+.login-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 500px;
+  margin: auto;
+  padding: 0 16px;
+}
+
+.login-error{
+  text-align: center;
+  padding-top: 10px;
 }

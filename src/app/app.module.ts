@@ -10,13 +10,21 @@ import { AngularFireModule } from '@angular/fire'
 import { environment } from '../environments/environment'
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { RegisterComponent } from './components/register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input'
+import {MatButtonModule} from '@angular/material/button'
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { LoadDirective } from './directives/load.directive'
+
+const materialModules = [MatInputModule, MatButtonModule, MatProgressSpinnerModule];
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoadDirective
   ],
   imports: [
     BrowserModule,
@@ -24,7 +32,9 @@ import { RegisterComponent } from './components/register/register.component';
     ReactiveFormsModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.fire),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    BrowserAnimationsModule,
+    ...materialModules
   ],
   providers: [],
   bootstrap: [AppComponent]
