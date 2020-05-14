@@ -49,6 +49,10 @@ export class LoginComponent implements OnInit {
       });
   }
 
+  goToRegister() {
+    this.router.navigate(['register']);
+  }
+
   getError(control: AbstractControl) {
     if (control.hasError('email')) {
       return 'Email invalid';

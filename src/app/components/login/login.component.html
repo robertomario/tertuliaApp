@@ -1,4 +1,5 @@
-<h1 class="title">Login</h1>
+<h1 class="title">Welcome</h1>
+<h2 class="title">Sign in to continue</h2>
 <form [formGroup]="loginForm" (ngSubmit)="goToLogin()" class="login-form">
   <mat-form-field appearance="outline">
     <mat-label>Email</mat-label>
@@ -26,5 +27,12 @@
   <button mat-raised-button [appLoad]="isLoad"  color="primary" [disabled]="loginForm.invalid || isLoad" name="Login">Log in</button>
   <mat-error class="login-error">{{ error }}</mat-error>
 </form>
+
+<mat-hint class="login-hint">
+  Don't have an account?
+  <button mat-button color="link" (click)="goToRegister()">
+    Create a new account
+  </button>
+</mat-hint>
 
 <mat-spinner [diameter]="20" ></mat-spinner>
