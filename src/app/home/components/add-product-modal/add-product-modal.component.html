@@ -1,0 +1,26 @@
+<h1>Add new product</h1>
+
+<form
+  mat-dialog-content
+  class="product-form"
+  [formGroup]="saveForm"
+  (ngSubmit)="save()">
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input type="text" id="name" formControlName="name" matInput />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Quantity</mat-label>
+    <input type="number" id="quantity" formControlName="quantity" matInput />
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Description</mat-label>
+    <input type="text" id="description" formControlName="description" matInput />
+  </mat-form-field>
+
+  <button mat-raised-button class="dialog-buttons">Cancel</button>
+  <button mat-raised-button color="primary" class="dialog-buttons" [disabled]="saveForm.invalid">Save</button>
+
+</form>
+
+
