@@ -18,7 +18,7 @@
     <input type="text" id="description" formControlName="description" matInput />
   </mat-form-field>
 
-  <button mat-raised-button class="dialog-buttons">Cancel</button>
+  <button mat-raised-button class="dialog-buttons" (click)="cancel()">Cancel</button>
   <button mat-raised-button color="primary" class="dialog-buttons" [disabled]="saveForm.invalid">Save</button>
 
 </form>

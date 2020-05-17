@@ -15,9 +15,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  constador = 10;
   error = '';
-
   isLoad = false;
 
   constructor(
@@ -59,9 +57,9 @@ export class LoginComponent implements OnInit {
     } else if (control.hasError('required')) {
       return 'This field is required';
     } else if (control.hasError('minlength')) {
-      return `The min character of the password is ${control.errors.minlength.requiredLength}`;
+      return `The minimum number of characters for the password is ${control.errors.minlength.requiredLength}`;
     } else {
-      return 'Any error';
+      return 'Unexpected error';
     }
   }
 }

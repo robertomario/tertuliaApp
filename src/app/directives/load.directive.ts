@@ -14,7 +14,7 @@ export class LoadDirective implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if(this.appLoad){
-      this.elementRef.nativeElement.innerHTML = '<div class="ls-dual-ring"></div>';
+      this.elementRef.nativeElement.innerHTML = '<div class="lds-dual-ring"></div>';
     } else {
       this.elementRef.nativeElement.innerHTML = this.name;
     }
