@@ -24,7 +24,7 @@
     />
     <mat-error>{{ getError(loginForm.get("password")) }}</mat-error>
   </mat-form-field>
-  <button mat-raised-button color="primary" [appLoad]="isLoad" name="Login" [disabled]="loginForm.invalid || isLoad">Log in</button>
+  <button mat-raised-button color="primary" [appLoading]="isLoad" name="Login" [disabled]="loginForm.invalid || isLoad">Log in</button>
   <mat-error class="login-error">{{ error }}</mat-error>
 </form>
 

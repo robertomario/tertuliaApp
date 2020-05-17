@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.dialog.open(AddProductModalComponent);
+    //this.dialog.open(AddProductModalComponent);
   }
 
   openDialogAddProduct(){

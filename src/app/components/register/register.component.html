@@ -34,7 +34,7 @@
     />
     <mat-error>{{ getError(registerForm.get("password")) }}</mat-error>
   </mat-form-field>
-  <button mat-raised-button color="primary" [appLoad]="isLoad" name="Register" [disabled]="registerForm.invalid || isLoad">Register</button>
+  <button mat-raised-button color="primary" [appLoading]="isLoad" name="Register" [disabled]="registerForm.invalid || isLoad">Register</button>
   <mat-error class="register-error">{{ error }}</mat-error>
 </form>
 

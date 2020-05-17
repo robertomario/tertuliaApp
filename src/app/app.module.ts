@@ -13,7 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input'
 import {MatButtonModule} from '@angular/material/button'
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import { LoadDirective } from './directives/load.directive'
+import { CommonsModule } from './commons/commons.module'
 
 const materialModules = [MatInputModule, MatButtonModule, MatProgressSpinnerModule];
 
@@ -22,7 +22,6 @@ const materialModules = [MatInputModule, MatButtonModule, MatProgressSpinnerModu
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    LoadDirective
   ],
   imports: [
     BrowserModule,
@@ -32,6 +31,7 @@ const materialModules = [MatInputModule, MatButtonModule, MatProgressSpinnerModu
     AngularFireModule.initializeApp(environment.fire),
     AngularFireAuthModule,
     BrowserAnimationsModule,
+    CommonsModule,
     ...materialModules
   ],
   providers: [],

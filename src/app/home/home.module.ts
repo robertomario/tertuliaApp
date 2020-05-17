@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AngularFireDatabaseModule } from '@angular/fire/database'
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonsModule } from './../commons/commons.module'
 
 //Material modules
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -24,6 +25,7 @@ const materialModules = [MatToolbarModule, MatIconModule, MatButtonModule, MatDi
     HomeRoutingModule,
     AngularFireDatabaseModule,
     ReactiveFormsModule,
+    CommonsModule,
     ...materialModules
   ]
 })
