@@ -1,9 +1,42 @@
-.toolbar-title{
+.toolbar-title {
   flex-grow: 1;
 }
 
-.add-button{
+.content {
+  padding: 16px;
+}
+
+.add-button {
   position: absolute;
   bottom: 20px;
   right: 20px;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: auto max-content minmax(20px, max-content) max-content;
+  align-items: center;
+  border-bottom: 1px solid gray;
+  padding: 10px 0;
+}
+
+.product-list-title {
+  margin: 0;
+  font-size: 16px;
+}
+
+.product-list-description {
+  color: gray;
+  font-size: 12px;
+}
+
+.product-count {
+  justify-self: center;
+}
+
+@media screen and (min-width: 600px) {
+  .content{
+    max-width: 600px;
+    margin: auto;
+  }
 }

@@ -7,6 +7,22 @@
   </button>
 </mat-toolbar>
 
+<div class="content">
+  <div *ngFor="let item of $productList | async" class="product-list">
+    <div>
+      <p class="product-list-title">{{item.name}}</p>
+      <span class="product-list-description">{{item.description}}</span>
+    </div>
+    <button mat-icon-button color="primary" (click)="removeQuantity(item)">
+      <mat-icon>remove</mat-icon>
+    </button>
+    <span class="product-count">{{item.quantity}}</span>
+    <button mat-icon-button color="primary" (click)="addQuantity(item)">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</div>
+
 <button mat-fab class="add-button" (click)="openDialogAddProduct()">
   <mat-icon>add</mat-icon>
 </button>

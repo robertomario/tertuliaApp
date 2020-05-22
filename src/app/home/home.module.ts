@@ -15,6 +15,7 @@ import {MatInputModule} from '@angular/material/input'
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { AddProductModalComponent } from './components/add-product-modal/add-product-modal.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 const materialModules = [MatToolbarModule, MatIconModule, MatButtonModule, MatDialogModule, MatInputModule];
 
@@ -26,6 +27,7 @@ const materialModules = [MatToolbarModule, MatIconModule, MatButtonModule, MatDi
     AngularFireDatabaseModule,
     ReactiveFormsModule,
     CommonsModule,
+    NgxMaskModule,
     ...materialModules
   ]
 })
