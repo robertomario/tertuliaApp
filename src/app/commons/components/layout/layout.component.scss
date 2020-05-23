@@ -1,0 +1,39 @@
+:host {
+  display: block;
+  padding-bottom: 60px;
+}
+
+.content{
+  height: calc(100vh - 60px);
+  overflow: auto;
+}
+
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
+.toolbar-title {
+  flex-grow: 1;
+}
+
+.footer {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 60px;
+}
+
+.add-button {
+  top: -25px;
+  left: calc(50% - 38px);
+  background-color: white;
+  z-index: 9;
+  padding: 10px;
+  border-radius: 50%;
+  position: absolute;
+}

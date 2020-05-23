@@ -1,0 +1,26 @@
+<div class="content">
+  <mat-toolbar color="primary" class="toolbar">
+    <span class="toolbar-title">
+      {{title}}
+    </span>
+    <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <ng-content></ng-content>
+</div>
+
+<footer class="footer">
+  <button mat-flat-button color="primary">
+    <mat-icon>person</mat-icon>
+  </button>
+  <div class="add-button" (click)="addClick.next()">
+    <button mat-fab>
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <button mat-flat-button>
+    <mat-icon>group</mat-icon>
+  </button>
+</footer>
