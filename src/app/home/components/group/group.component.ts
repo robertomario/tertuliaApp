@@ -3,8 +3,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { GroupModalComponent } from './../group-modal/group-modal.component';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { take, map } from 'rxjs/operators';
-import { forkJoin } from 'rxjs';
+import { take, map, switchMap, filter } from 'rxjs/operators';
+import { combineLatest, Observable } from 'rxjs';
+import { GroupModel } from '../../../core/models/group.model';
 
 @Component({
   selector: 'app-group',
@@ -12,23 +13,31 @@ import { forkJoin } from 'rxjs';
   styleUrls: ['./group.component.scss'],
 })
 export class GroupComponent implements OnInit {
+
+  $listGroup: Observable<GroupModel[]>;
+
   constructor(
     private dialog: MatDialog,
     private db: AngularFireDatabase,
     private afAuth: AngularFireAuth
   ) {
-    this.afAuth.user.pipe(take(1)).subscribe((user) => {
-      this.db
-        .object(`users/${user.uid}/groups/`)
-        .valueChanges()
-        .pipe(map((data) => Object.keys(data)))
-        .subscribe((data) => {
-          const resultQuery = data.map(key => this.db.object(`groups/${key}/`).valueChanges().pipe(take(1)));
-          forkJoin([...resultQuery]).subscribe((dataFinal) => {
-            console.log(dataFinal);
-          })
-        });
-    });
+    this.$listGroup = this.afAuth.user.pipe(
+      take(1),
+      switchMap((user) => this.db.object(`users/${user.uid}/groups/`).valueChanges()),
+      filter((data) => !!data),
+      map((data) => Object.keys(data)),
+      map((data) =>
+        data.map((key) =>
+          this.db
+            .object<GroupModel>(`groups/${key}/`)
+            .valueChanges()
+            .pipe(
+              map((obj) => ({ ...obj, members: Object.keys(obj.members) }))
+            )
+        )
+      ),
+      switchMap((data) => combineLatest(data))
+    );
   }
 
   ngOnInit(): void {}

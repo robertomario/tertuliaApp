@@ -10,6 +10,7 @@ import { take } from 'rxjs/operators';
 })
 export class GroupModalComponent implements OnInit {
 
+  codeGroup: string;
   nameGroup: string;
   loadAdd = false;
 
@@ -44,6 +45,16 @@ export class GroupModalComponent implements OnInit {
     await this.db.object(`users/${userUID}/groups/`).update({
       [groupUID]: true
     })
+  }
+
+  joinGroup() {
+    this.loadAdd = true;
+    this.afAuth.user.pipe(take(1)).subscribe(async (user) => {
+      await this.db.object(`users/${user.uid}/groups/`).update({
+        [this.codeGroup]: true
+      });
+      this.loadAdd = false;
+    });
   }
 
 }

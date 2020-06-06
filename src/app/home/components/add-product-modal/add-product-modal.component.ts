@@ -37,9 +37,4 @@ export class AddProductModalComponent implements OnInit {
     this.isLoad = false;
     this.dialogRef.close('Saved');
   }
-
-  cancel() {
-    this.dialogRef.close('Cancelled');
-  }
-
 }
