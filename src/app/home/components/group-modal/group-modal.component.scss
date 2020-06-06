@@ -1,0 +1,29 @@
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.subtitle {
+
+  text-align: center;
+  font-size: 16px;
+  background: white;
+  font-weight: initial;
+}
+
+.content-divisor {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: auto max-content auto;
+  align-items: center;
+  column-gap: 7px;
+  margin-left: -24px;
+  margin-right: -23px;
+  margin-bottom: 20px;
+}
+
+.divisor {
+  display: inline-block;
+  width: 100%;
+  border-top: 1px solid #acacac;
+}

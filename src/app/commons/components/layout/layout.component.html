@@ -12,7 +12,7 @@
 </div>
 
 <footer class="footer">
-  <button mat-flat-button color="primary">
+  <button mat-flat-button routerLink="/home/personal" routerLinkActive="active">
     <mat-icon>person</mat-icon>
   </button>
   <div class="add-button" (click)="addClick.next()">
@@ -20,7 +20,7 @@
       <mat-icon>add</mat-icon>
     </button>
   </div>
-  <button mat-flat-button>
+  <button mat-flat-button routerLink="/home/group" routerLinkActive="active">
     <mat-icon>group</mat-icon>
   </button>
 </footer>
