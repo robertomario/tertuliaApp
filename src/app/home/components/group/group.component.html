@@ -6,7 +6,7 @@
   <div *ngFor="let item of $listGroup | async" class="content">
     <span>{{item.name}}</span>
     <span>{{item.uid}}</span>
-    <button mat-icon-button>
+    <button mat-icon-button [routerLink]="'/home/group/' + item.uid">
       <mat-icon>keyboard_arrow_right</mat-icon>
     </button>
   </div>

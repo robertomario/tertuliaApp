@@ -18,6 +18,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AddProductModalComponent } from './components/add-product-modal/add-product-modal.component';
 import { GroupComponent } from './components/group/group.component';
 import { GroupModalComponent } from './components/group-modal/group-modal.component';
+import { GroupInfoComponent } from './components/group-info/group-info.component';
 
 const materialModules = [MatToolbarModule, MatIconModule, MatButtonModule, MatDialogModule, MatInputModule];
 
@@ -26,7 +27,8 @@ const materialModules = [MatToolbarModule, MatIconModule, MatButtonModule, MatDi
     HomeComponent,
     AddProductModalComponent,
     GroupComponent,
-    GroupModalComponent
+    GroupModalComponent,
+    GroupInfoComponent
   ],
   imports: [
     CommonModule,

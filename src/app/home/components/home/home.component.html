@@ -1,20 +1,10 @@
-<app-layout
-  title="Products"
-  (addClick)="openDialogAddProduct()"
->
+<app-layout title="Products" (addClick)="openDialogAddProduct()">
   <div class="content">
-    <div *ngFor="let item of $productList | async" class="product-list">
-      <div>
-        <p class="product-list-title">{{item.name}}</p>
-        <span class="product-list-description">{{item.description}}</span>
-      </div>
-      <button mat-icon-button color="primary" (click)="removeQuantity(item)">
-        <mat-icon>remove</mat-icon>
-      </button>
-      <span class="product-count">{{item.quantity}}</span>
-      <button mat-icon-button color="primary" (click)="addQuantity(item)">
-        <mat-icon>add</mat-icon>
-      </button>
-    </div>
+    <app-product
+      *ngFor="let item of $productList | async"
+      [product]="item"
+      (addProduct)="addQuantity($event)"
+      (removeProduct)="removeQuantity($event)"
+    ></app-product>
   </div>
 </app-layout>

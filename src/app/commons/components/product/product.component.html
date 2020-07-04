@@ -1,0 +1,13 @@
+<div class="product-list">
+  <div>
+    <p class="product-list-title">{{product.name}}</p>
+    <span class="product-list-description">{{product.description}}</span>
+  </div>
+  <button mat-icon-button color="primary" (click)="removeProduct.emit(product)">
+    <mat-icon>remove</mat-icon>
+  </button>
+  <span class="product-count">{{product.quantity}}</span>
+  <button mat-icon-button color="primary" (click)="addProduct.emit(product)">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

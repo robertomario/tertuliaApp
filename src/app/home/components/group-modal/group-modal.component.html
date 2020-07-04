@@ -26,4 +26,5 @@
     <input matInput type="text" [(ngModel)]="codeGroup" />
   </mat-form-field>
   <button mat-raised-button color="primary" [disabled]="loadAdd || !codeGroup" (click)="joinGroup()">join</button>
+  <mat-error>{{error2}}</mat-error>
 </div>

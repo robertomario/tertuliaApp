@@ -1,0 +1,5 @@
+<app-layout [title]="group?.name + '-' + group?.uid" (addClick)="openModal()">
+  <div class="content">
+    <app-product *ngFor="let item of group?.products" [product]="item"></app-product>
+  </div>
+</app-layout>

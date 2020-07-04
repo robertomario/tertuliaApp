@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { FormBuilder, FormControl, Validators, FormGroup } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { take } from 'rxjs/operators';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-product-modal',
@@ -14,10 +14,10 @@ export class AddProductModalComponent implements OnInit {
   saveForm: FormGroup;
   isLoad = false;
 
-  constructor(private db: AngularFireDatabase, formBuilder: FormBuilder, private afAuth: AngularFireAuth, private dialogRef: MatDialogRef<AddProductModalComponent>) {
+  constructor(private db: AngularFireDatabase, formBuilder: FormBuilder, private afAuth: AngularFireAuth, private dialogRef: MatDialogRef<AddProductModalComponent>, @Inject(MAT_DIALOG_DATA) private data?: string) {
     this.saveForm = formBuilder.group({
       name: ['', Validators.required],
-      quantity: ['', Validators.required],
+      quantity: [0, Validators.required],
       description: ['', Validators.nullValidator]
     })
   }
@@ -30,8 +30,9 @@ export class AddProductModalComponent implements OnInit {
     const {name, quantity, description} = this.saveForm.value;
     this.afAuth.user.pipe(take(1)).subscribe((user) => {
       const uid = this.db.createPushId();
+      const domain = this.data ? `groups/${this.data}/products/${uid}` : `products/${user.uid}/${uid}`;
       this.db
-        .object(`products/${user.uid}/${uid}`)
+        .object(domain)
         .set({ name, quantity, description, uid});
     })
     this.isLoad = false;
